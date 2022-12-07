@@ -8,14 +8,7 @@ train_data = pd.read_csv('train.csv')
 
 # variables
 target = ['Survived']
-
-names = pd.Series(train_data['Name'])
-
-for i, name in enumerate(names):
-    title = name.split(' ')[1]
-    names[i] = int(hash(title))
-
-features = ['Pclass', 'Fare', 'SibSp', 'Parch', 'Name']
+features = ['Pclass', 'Fare', 'SibSp', 'Parch', 'Name', 'Ticket']
 
 X = train_data[features]
 y = train_data[target]
@@ -27,7 +20,18 @@ model.fit(train_X, train_y)
 
 predicted = model.predict(val_X)
 
-mae = mean_absolute_error(val_y, predicted)
+avrMae = 0
+for i in range(100000):
+    avrMae += mean_absolute_error(val_y, predicted)
+avrMae /= 100000
+print(avrMae)
 
-print(mae)
+# Without ticket number
+#0.214
+#0.257
+#0.201
 
+# With ticket number
+#0.185
+#0.205
+#0.183
