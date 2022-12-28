@@ -1,0 +1,23 @@
+Sex :
+   0 - female
+   1 - male
+
+Title :
+    Mr. : 0
+    Mrs. : 1
+    Miss. : 2
+    Master. : 3
+    Don. : 4
+    Rev. : 5
+    Dr. : 6
+    Mme. : 7
+    Ms. : 8
+    Major. : 9
+    Lady. : 10
+    Sir. : 11
+    Mlle. : 12
+    Col. : 13
+    Capt. : 14
+    Countess. : 15
+    Jonkheer. : 16
+    Dona. : 17
